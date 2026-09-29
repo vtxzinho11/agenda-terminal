@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Segredos e dados locais (nunca versionar)
+.env
+*.db
+*.sqlite
+*.sqlite3
+contatos.json
+tarefas.json
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,17 @@
+# MySQL local para desenvolvimento: docker compose up -d
+# Usa os mesmos valores do .env.example (usuário "agenda").
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:-troque-esta-senha}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-agenda}
+      MYSQL_USER: ${MYSQL_USER:-agenda}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-troque-esta-senha}
+    ports:
+      - "3306:3306"
+    volumes:
+      - agenda_dados:/var/lib/mysql
+volumes:
+  agenda_dados:
